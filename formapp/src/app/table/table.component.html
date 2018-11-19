@@ -1,0 +1,24 @@
+<table width="100%" border="1">
+  <tr>
+    <th>
+      NAME
+    </th>
+    <th>
+      EMAIL
+    </th>
+    <th>
+      DATE
+    </th>
+    <th>
+      GENDER
+    </th>
+    <th>ACTION</th>
+  </tr>
+  <tr *ngFor="let emp of employees">
+    <td>{{emp.name}}</td>
+    <td>{{emp.email}}</td>
+    <td>{{emp.date}}</td>
+    <td>{{emp.gender}}</td>
+    <td><a href="#" (click)="editEmployee(emp)">EDIT</a>&nbsp;<a href="#"(click)="deleteEmployee(emp)">DELETE</a></td>
+  </tr>
+</table>

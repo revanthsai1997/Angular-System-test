@@ -1,0 +1,32 @@
+<h1>{{title | uppercase}}</h1>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="name" name="name" [(ngModel)]="employee.name">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="email" name="email" [(ngModel)]="employee.email">
+    </mat-form-field><br>
+    <mat-radio-group name="gender" [(ngModel)]="employee.gender">
+        <mat-radio-button  value="male" >Male</mat-radio-button>
+        <mat-radio-button  value="female" >Female</mat-radio-button>
+      </mat-radio-group><br>
+    
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date Of Birth" name="date" [(ngModel)]="employee.date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field><br>
+    <button mat-button (click)='saveEmployee()'>Add</button>
+    <button mat-button (click)='updateEmployee()'>Update</button>
+    <button mat-button (click)='resetEmployee()'>Reset</button>
+  </form>
+  
+
+
+
+
+
+
+<app-table #tablecomponent (selectedItem)="editEmployee($event)"></app-table>
+<router-outlet></router-outlet>
